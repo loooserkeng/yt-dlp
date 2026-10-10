@@ -14,7 +14,7 @@ logging.basicConfig(level=logging.INFO)
 log = logging.getLogger("private-video-bot")
 
 TOKEN = os.environ.get("BOT_TOKEN") or os.environ.get("TELEGRAM_BOT_TOKEN")
-OWNER_ID = int(os.environ["ALLOWED_USER_ID"])
+OWNER_ID = int(os.environ.get("ALLOWED_USER_ID", "0"))
 MAX_MB = int(os.environ.get("MAX_FILE_MB", "49"))
 MAX_BYTES = MAX_MB * 1024 * 1024
 LOCK = asyncio.Lock()
